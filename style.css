@@ -1,0 +1,38 @@
+/* variable des couleur */
+
+:root {
+    --fond-principal:#0F0F0F;
+    --font-contenu:#1A1A1A;
+    --font-contours:#2E2E2E;
+    --texte-titre:#ffffff;
+    --texte-courant:#d1d1d1;
+    --texte-lien:#8f8f8f;
+    --objet-survol:#6E40C9;
+    --objet-permanent:#8B5CF6; 
+    --objet-clic:#9B6DED;
+}
+
+
+
+
+/* corp de la page */
+
+body {
+    text-align: center;
+    background-color: var(--fond-principal);
+    color: var(--texte-courant);
+}
+
+img {
+    width: 100px;
+    border-radius: 100px;
+}
+
+
+
+
+/* couleur appliquer */
+
+h1 {
+    color: var(--texte-titre);
+}
