@@ -5,7 +5,7 @@
     --font-contours:#2E2E2E;
     --texte-titre:#ffffff;
     --texte-courant:#d1d1d1;
-    --texte-lien:#8f8f8f;
+    --texte-lien:#6f6f6f;
     --objet-survol:#6E40C9;
     --objet-permanent:#8B5CF6; 
     --objet-clic:#9B6DED;
@@ -14,7 +14,9 @@
 
 
 
-/* corp de la page */
+/* visuelle appliquer */
+
+
 body {
     text-align: center;
     background-color: var(--fond-principal);
@@ -26,10 +28,70 @@ img {
     border-radius: 100px;
 }
 
+.titre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.photo {
+    margin: 1px 0px 10px 0px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0px 50px 0px;
+}
+
+.bulle {
+    background-color: var(--font-contenu);
+    color: var(--texte-titre);
+    padding: 1% 10% 5% 10%;
+    margin: 5% 20% 5% 20%;
+    border-radius: 30% 30% 30% 30%;
+    border: solid;
+    color:var(--font-contours);
+}
+
+.button {
+    border: solid;
+    border-radius: 20% 20% 20% 20%;
+    padding: 2% 2% 2% 2%;
+}
+
+.button:hover {
+    background-color:var(--font-contours);
+}
+
 
 
 
 /* couleur appliquer */
+
+
 h1 {
     color: var(--texte-titre);
+}
+
+a {
+    color: var(--texte-lien);
+}
+
+a:hover {
+    color: var(--objet-survol);
+}
+
+a:active {
+    color: var(--objet-clic);
+}
+
+p {
+    color: var(--texte-courant);
+}
+
+span {
+    color: var(--objet-permanent);
 }
