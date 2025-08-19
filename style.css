@@ -1,5 +1,4 @@
 /* variable des couleur */
-
 :root {
     --fond-principal:#0F0F0F;
     --font-contenu:#1A1A1A;
@@ -16,7 +15,6 @@
 
 
 /* corp de la page */
-
 body {
     text-align: center;
     background-color: var(--fond-principal);
@@ -32,7 +30,6 @@ img {
 
 
 /* couleur appliquer */
-
 h1 {
     color: var(--texte-titre);
 }
