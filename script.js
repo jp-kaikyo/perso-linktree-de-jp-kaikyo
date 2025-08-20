@@ -1,41 +1,39 @@
-// Attendre que la page soit entièrement chargée
-
-document.addEventListener('DOMContentLoaded', function() {
-
-
-    //code JavaScript
-
+document.addEventListener('DOMContentLoaded',function() {
     console.log("JavaScript externe chargé !");
 
+    const abonnée_stat = {
+        youtube: '25',
+        twitch: '38',
+        tiktok: '110',
+        instagram: '43',
+        tiktok_second: '0',
+        instagram_second: '350',
+    };
 
-    // Trouve l'élément et change son texte
+    document.getElementById('youtube-count').textContent = abonnée_stat.youtube;
+    document.getElementById('twitch-count').textContent = abonnée_stat.twitch;
+    document.getElementById('tiktok-count').textContent = abonnée_stat.tiktok;
+    document.getElementById('instagram-count').textContent = abonnée_stat.instagram;
+    document.getElementById('tiktok-second-count').textContent = abonnée_stat.tiktok_second;
+    document.getElementById('instagram-second-count').textContent = abonnée_stat.instagram_second;
+    
+    function trier(container_selector) {
+        const container = document.querySelector(container_selector);
+        if (!container) return;
 
-    fetch('https://www.youtube.com/@Joao-Paulo-Pinto-Queiros')
-        .then(response => response.json())
-        .then(data => {
-            const youtubeElement = document.getElementById('youtube-count');
-            if (data.items && data.items.length > 0) {
-                youtubeElement.textContent = data.items[0].statistics.subscriberCount;
-            } else {
-                youtubeElement.textContent = "Non trouvé";
-            }
-            console.log("Données YouTube :", data);
-        })
+        const blocs = Array.from(container.querySelectorAll('.button'));
 
-        .catch(error => {
-            console.log("Erreur YouTube :", error);
-            const youtubeElement = document.getElementById('youtube-count');
-            youtubeElement.textContent = "Erreur API";
+        blocs.sort((a, b) => {
+            const aNb = parseInt(a.querySelector('span').textContent,10) || 0;
+            const bNb = parseInt(b.querySelector('span').textContent,10) || 0;
+            return bNb - aNb;
         });
 
-    const twitchElement = document.getElementById('twitch-count');
-    twitchElement.textContent = '856';
-    
-    const tiktokElement = document.getElementById('tiktok-count');
-    tiktokElement.textContent = '2,3K';
-    
-    const instaElement = document.getElementById('instagram-count');
-    instaElement.textContent = '492';
+        blocs.forEach(bloc => container.appendChild(bloc));
+    }
 
-    console.log("youtube mis a jours !");
+    trier('main');
+    trier('footer');
+
+    console.log("Tous les réseaux mis à jour et triés !")
 });
