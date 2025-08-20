@@ -14,6 +14,28 @@
 
 
 
+/* couleur appliquer */
+
+
+h1,h2 {
+    color: var(--texte-titre);
+}
+
+a {
+    color: var(--texte-lien);
+}
+
+p {
+    color: var(--texte-courant);
+}
+
+span {
+    color: var(--objet-permanent);
+}
+
+
+
+
 /* visuelle appliquer */
 
 
@@ -23,19 +45,29 @@ body {
     color: var(--texte-courant);
 }
 
-img {
-    width: 100px;
-    border-radius: 100px;
+.photo {
+    margin: 1px 0px 10px 0px;
+    width: 250px;
+    height: 150px;
+    border-radius: 50px;
+    border: solid 4px;
+    color: var(--font-contours);
+    object-fit: cover;
 }
 
-.titre {
+.premier_bloc {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.photo {
-    margin: 1px 0px 10px 0px;
+.titre {
+    margin: 60px 0px 20px 0px;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 100px;
 }
 
 section {
@@ -51,33 +83,29 @@ section {
     color: var(--texte-titre);
     padding: 1% 10% 5% 10%;
     margin: 5% 20% 5% 20%;
-    border-radius: 30% 30% 30% 30%;
+    border-radius: 15% 15% 15% 15%;
     border: solid;
     color:var(--font-contours);
 }
 
 .button {
     border: solid;
-    border-radius: 20% 20% 20% 20%;
+    border-radius: 3% 30% 3% 30%;
     padding: 2% 2% 2% 2%;
 }
+
+
+
+
+/* interaction visuelle */
+
 
 .button:hover {
     background-color:var(--font-contours);
 }
 
-
-
-
-/* couleur appliquer */
-
-
-h1 {
-    color: var(--texte-titre);
-}
-
-a {
-    color: var(--texte-lien);
+.logo:hover {
+    opacity: 50%;
 }
 
 a:hover {
@@ -86,12 +114,4 @@ a:hover {
 
 a:active {
     color: var(--objet-clic);
-}
-
-p {
-    color: var(--texte-courant);
-}
-
-span {
-    color: var(--objet-permanent);
 }
