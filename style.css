@@ -46,13 +46,14 @@ body {
 }
 
 .photo {
-    margin: 1px 0px 10px 0px;
-    width: 250px;
-    height: 150px;
-    border-radius: 50px;
-    border: solid 4px;
+    margin: 0px 0px 10px 0px;
+    width: 200px;
+    height: 100px;
+    border-radius: 25px;
+    border: solid 5px;
     color: var(--font-contours);
     object-fit: cover;
+    object-position: 0px -35px;
 }
 
 .premier_bloc {
@@ -62,36 +63,57 @@ body {
 }
 
 .titre {
-    margin: 60px 0px 20px 0px;
+    margin: 20px 0px 10px 0px;
 }
 
+.section_titre {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* haut équilibré */
 .logo {
-    width: 100px;
-    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    clip-path: polygon(     /* comme border-radius mais en forme de Hexagone */
+        27% 10%, 73% 10%,   /* haut équilibré */
+        96% 50%,            /* point droit */
+        73% 90%, 27% 90%,   /* bas équilibré */
+        5% 50%              /* point gauche */
+    );
 }
 
 section {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
-    margin: 50px 0px 50px 0px;
+    margin: 10px 0px 10px 0px;
 }
 
-.bulle {
+#bulle {
     background-color: var(--font-contenu);
     color: var(--texte-titre);
-    padding: 1% 10% 5% 10%;
-    margin: 5% 20% 5% 20%;
-    border-radius: 15% 15% 15% 15%;
+    padding: 1% 1% 1% 1%;
+    margin: 1% 25% 1% 25%;
+    border-radius: 250px 250px 250px 250px;
     border: solid;
     color:var(--font-contours);
 }
 
 .button {
+    font-size: 15px;
     border: solid;
-    border-radius: 3% 30% 3% 30%;
-    padding: 2% 2% 2% 2%;
+    border-radius: 25px;
+    padding: 10px;
+    justify-content: space-around;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+a {
+    margin: 0px 25px 0px 25px;
 }
 
 
