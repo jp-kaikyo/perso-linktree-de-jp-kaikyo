@@ -89,14 +89,14 @@ a:active {
 /* ==== PALETTE DES BULLE ==== */
 
 
-.bulle_principal {
+.bulle_secondaire {
     background-color: var(--font-contenu);
     color:var(--font-contours);
     border: solid var(--font-contours);
-    padding: 9px;
+    padding: 6px;
     margin: 1% 25% 1% 25%;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 75px;
 }
 
 .bulle_info {
@@ -170,13 +170,6 @@ section {
 .logo {
     width: 50px;
     height: 50px;
-    object-fit: cover;
-    clip-path: polygon(     /* comme border-radius mais en forme de Hexagone */
-        27% 10%, 73% 10%,   /* haut équilibré */
-        96% 50%,            /* point droit */
-        73% 90%, 27% 90%,   /* bas équilibré */
-        5% 50%              /* point gauche */
-    );
 }
 
 a {
