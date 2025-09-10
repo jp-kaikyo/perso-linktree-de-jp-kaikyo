@@ -23,7 +23,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
-
 :root {
     --police-titre: Georgia, "Times New Roman", serif;
     --police-texte: "Comic Sans MS", cursive, sans-serif;
@@ -37,9 +36,18 @@
 
 /* style titre */
 
-h1, h2 {
+h1 {
     font-family: var(--police-titre);
     font-weight: var(--gras-titre);
+    font-size: var(--taille-titre-principal);
+    color: var(--texte-titre);
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-family: var(--police-titre);
+    font-weight: var(--gras-titre);
+    font-size: var(--taille-sous-titre);
     color: var(--texte-titre);
     margin-bottom: 0.5em;
 }
@@ -59,25 +67,26 @@ p, span {
 /* style lien */
 
 a {
-    color: var(--texte-lien);
-    font-weight: 500;
     font-style: oblique;
+    font-weight: 500;
     text-decoration: underline;
+    color: var(--texte-lien);
 }
 
 
-/* hover */
+/* == hover == */
 
 a:hover {
     color: var(--objet-survol);
 }
 
 
-/* active */
+/* == active == */
 
 a:active {
     color: var(--objet-clic);
 }
+
 
 
 
@@ -87,19 +96,21 @@ a:active {
 .bulle_principal {
     background-color: var(--font-contenu);
     color:var(--font-contours);
-    padding: 2% 0% 4% 0%;
+    border: solid var(--font-contours);
+    padding: 9px;
     margin: 1% 25% 1% 25%;
-    border-radius: 250px;
-    border: solid;
+    text-align: center;
+    border-radius:  50px;
 }
 
 .bulle_info {
     background-color: var(--font-contenu);
     color:var(--font-contours);
-    padding: 10px;
+    border: solid var(--font-contours);
+    padding: 3px;
     margin: 2% 10% 2% 10%;
-    border-radius: 250px;
-    border: solid;
+    text-align: center;
+    border-radius: 100px;
     transition: 1s;
 }
 
@@ -107,15 +118,17 @@ a:active {
 /* hover */
 
 .bulle_info:hover {
-    background-color: var(--font-contours);
-    color:var(--font-contours);
-    padding: 10px;
-    margin: 2% 11% 2% 11%;
-    border-radius: 250px;
-    border: solid; 
-    font-size: 15px;
+    border: solid var(--objet-survol);
+    color: var(--texte-lien);
+    padding: 0px;
+    margin: 4% 11% 4% 11%;
     transition: 1s;
 }
+.bulle_info:hover * {
+    border: none;
+    transition: 1s;
+}
+
 
 
 
@@ -123,9 +136,7 @@ a:active {
 
 
 body {
-    text-align: center;
     background-color: var(--fond-principal);
-    color: var(--texte-courant);
 }
 
 .photo {
@@ -178,10 +189,6 @@ a {
 
 /* ==== INTERACTION VISEULLE ==== */
 
-
-.button:hover {
-    background-color:var(--font-contours);
-}
 
 .logo:hover {
     opacity: 50%;
