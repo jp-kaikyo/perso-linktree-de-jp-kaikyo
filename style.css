@@ -52,9 +52,7 @@ h2 {
     margin-bottom: 0.5em;
 }
 
-
 /* style texte */
-
 p, span {
     font-family: var(--police-texte);
     font-weight: var(--gras-texte);
@@ -63,9 +61,7 @@ p, span {
     line-height: 1.6;
 }
 
-
 /* style lien */
-
 a {
     font-style: oblique;
     font-weight: 500;
@@ -100,7 +96,7 @@ a:active {
     padding: 9px;
     margin: 1% 25% 1% 25%;
     text-align: center;
-    border-radius:  50px;
+    border-radius: 50px;
 }
 
 .bulle_info {
@@ -108,24 +104,27 @@ a:active {
     color:var(--font-contours);
     border: solid var(--font-contours);
     padding: 3px;
-    margin: 2% 10% 2% 10%;
+    margin: 3% 10% 3% 10%;
     text-align: center;
     border-radius: 100px;
     transition: 1s;
 }
 
 
-/* hover */
+/* == hover == */
 
 .bulle_info:hover {
     border: solid var(--objet-survol);
-    color: var(--texte-lien);
-    padding: 0px;
-    margin: 4% 11% 4% 11%;
+    padding: 6px;
+    margin: 3% 9% 3% 9%;
     transition: 1s;
 }
-.bulle_info:hover * {
-    border: none;
+
+
+/* == active == */
+
+.bulle_info:active {
+    border: solid var(--objet-clic);
     transition: 1s;
 }
 
@@ -165,7 +164,7 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 10px 0px 10px 0px;
+    margin: 5px 0px 5px 0px;
 }
 
 .logo {
