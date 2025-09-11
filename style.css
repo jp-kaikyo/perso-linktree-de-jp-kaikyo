@@ -26,8 +26,8 @@
 :root {
     --police-titre: Georgia, "Times New Roman", serif;
     --police-texte: "Comic Sans MS", cursive, sans-serif;
-    --taille-titre-principal: 2.5rem;  /* h1 */
-    --taille-sous-titre: 2rem;         /* h2 */
+    --taille-titre-principal: 2rem;  /* h1 */
+    --taille-sous-titre: 1.5rem;         /* h2 */
     --taille-texte: 1rem;              /* p */
     --gras-titre: 700;
     --gras-texte: 400;
@@ -86,6 +86,7 @@ a:active {
 
 
 
+
 /* ==== PALETTE DES BULLE ==== */
 
 
@@ -94,7 +95,7 @@ a:active {
     color:var(--font-contours);
     border: solid var(--font-contours);
     padding: 6px;
-    margin: 2% 27% 2% 27%;
+    margin: 2% 28% 2% 28%;
     text-align: center;
     border-radius: 75px;
 }
@@ -104,7 +105,7 @@ a:active {
     color:var(--font-contours);
     border: solid var(--font-contours);
     padding: 3px;
-    margin: 3% 10% 3% 10%;
+    margin: 4% 10% 4% 10%;
     text-align: center;
     border-radius: 100px;
     transition: 1s;
@@ -131,6 +132,17 @@ a:active {
 
 
 
+/* ==== CSS body ==== */
+
+
+body {
+    background-color: var(--fond-principal);
+    text-align: center;
+}
+
+
+
+
 /* ==== VISEULLE APLIQUER ==== */
 
 
@@ -139,7 +151,7 @@ body {
 }
 
 .photo {
-    margin: 0px 0px 10px 0px;
+    margin: 1% 0px 1% 0px;
     width: 200px;
     height: 100px;
     border-radius: 25px;
@@ -153,6 +165,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 1% 0px 1% 0px;
 }
 
 .section_titre {
@@ -164,7 +177,7 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 5px 0px 5px 0px;
+    margin: 0px 0px 5px 0px;
 }
 
 .logo {
