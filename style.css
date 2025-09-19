@@ -23,15 +23,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
 :root {
     --police-titre: Georgia, "Times New Roman", serif;
     --police-texte: "Comic Sans MS", cursive, sans-serif;
-    --taille-titre-principal: 2rem;  /* h1 */
+    --taille-titre-principal: 2rem;      /* h1 */
     --taille-sous-titre: 1.5rem;         /* h2 */
-    --taille-texte: 1rem;              /* p */
+    --taille-texte: 1rem;                /* p */
+    --taille-liens:1rem;                 /* a */
     --gras-titre: 700;
     --gras-texte: 400;
 }
+
+@media(max-width:768px){
+    :root {
+    --taille-titre-principal: 1.25rem;  /* h1 */
+    --taille-sous-titre: 1rem;         /* h2 */
+    --taille-texte: 0.75rem;              /* p */
+    --taille-liens: 0.75rem;                 /* a */
+}}
 
 
 /* style titre */
@@ -66,6 +76,7 @@ a {
     font-style: oblique;
     font-weight: 500;
     text-decoration: underline;
+    font-size: var(--taille-liens);
     color: var(--texte-lien);
 }
 
@@ -86,7 +97,6 @@ a:active {
 
 
 
-
 /* ==== PALETTE DES BULLE ==== */
 
 
@@ -94,10 +104,17 @@ a:active {
     background-color: var(--font-contenu);
     color:var(--font-contours);
     border: solid var(--font-contours);
-    padding: 6px;
+    padding: 3px;
     margin: 2% 28% 2% 28%;
     text-align: center;
     border-radius: 75px;
+}
+
+@media(max-width:768px){
+    .bulle_secondaire {
+        padding: 3px;
+        margin: 1% 2% 1% 2%;
+    }
 }
 
 .bulle_info {
@@ -111,14 +128,28 @@ a:active {
     transition: 1s;
 }
 
+@media(max-width:768px){
+    .bulle_info {
+        padding: 3px;
+        margin: 2% 4% 2% 4%;
+    }   
+}
 
 /* == hover == */
 
 .bulle_info:hover {
     border: solid var(--objet-survol);
     padding: 6px;
-    margin: 3% 9% 3% 9%;
+    margin: 1% 45% 1% 45%;
     transition: 1s;
+}
+
+@media(max-width:768px){
+    .bulle_info:hover {
+        color: var(--objet-survol);
+        margin: 2% 32% 2% 32%;
+        transition: 1s;
+    }
 }
 
 
@@ -127,6 +158,50 @@ a:active {
 .bulle_info:active {
     border: solid var(--objet-clic);
     transition: 1s;
+}
+
+@media(max-width:768px){
+    .bulle_info:active {
+        color: var(--objet-survol);
+        margin: 2% 32% 2% 32%;
+        transition: 1s;
+    }
+}
+
+
+
+
+/* ==== PALETTE DES img ==== */
+
+
+img {
+    width: 41px;
+    height: 41px;
+    transition: 0.5s;
+}
+
+@media(max-width:768px){
+    img {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+
+/* == hover == */
+
+img:hover {
+    width: 46px;
+    height: 46px;
+    opacity: 50%;
+    transition: 0.5s;
+}
+
+@media(max-width:768px){
+    img:hover {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 
@@ -161,6 +236,19 @@ body {
     object-position: 0px -35px;
 }
 
+@media(max-width:768px){
+    .photo {
+        margin: 1% 0px 1% 0px;
+        width: 100px;
+        height: 50px;
+        border-radius: 25px;
+        border: solid 5px;
+        color: var(--font-contours);
+        object-fit: cover;
+        object-position: 0px -20px;
+    }
+}
+
 .premier_bloc {
     display: flex;
     flex-direction: column;
@@ -180,20 +268,9 @@ section {
     margin: 0px 0px 5px 0px;
 }
 
-.logo {
-    width: 50px;
-    height: 50px;
-}
-
 a {
     margin: 0px 25px 0px 25px;
 }
-
-
-
-
-/* ==== INTERACTION VISEULLE ==== */
-
 
 .logo:hover {
     opacity: 50%;
