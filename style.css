@@ -147,7 +147,7 @@ a:active {
 @media(max-width:768px){
     .bulle_info:hover {
         color: var(--objet-survol);
-        margin: 2% 32% 2% 32%;
+        margin: 1% 4% 1% 4%;
         transition: 1s;
     }
 }
