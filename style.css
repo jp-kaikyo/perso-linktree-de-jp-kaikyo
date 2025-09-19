@@ -118,17 +118,19 @@ a:active {
 }
 
 .bulle_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: var(--font-contenu);
     color:var(--font-contours);
     border: solid var(--font-contours);
     padding: 3px;
-    margin: 4% 10% 4% 10%;
-    text-align: center;
+    margin: 4% 8% 4% 8%;
     border-radius: 100px;
     transition: 1s;
 }
 
-@media(max-width:768px){
+@media(max-width:915px){
     .bulle_info {
         padding: 3px;
         margin: 2% 4% 2% 4%;
@@ -140,14 +142,14 @@ a:active {
 .bulle_info:hover {
     border: solid var(--objet-survol);
     padding: 6px;
-    margin: 1% 45% 1% 45%;
+    margin: 4% 10% 4% 10%;
     transition: 1s;
 }
 
 @media(max-width:768px){
     .bulle_info:hover {
         color: var(--objet-survol);
-        margin: 1% 4% 1% 4%;
+        margin: 2% 8% 2% 8%;
         transition: 1s;
     }
 }
@@ -163,7 +165,7 @@ a:active {
 @media(max-width:768px){
     .bulle_info:active {
         color: var(--objet-survol);
-        margin: 2% 32% 2% 32%;
+        margin: 2% 8% 2% 8%;
         transition: 1s;
     }
 }
@@ -247,6 +249,16 @@ body {
         object-fit: cover;
         object-position: 0px -20px;
     }
+    .photo:hover {
+        margin: 1% 0px 1% 0px;
+        width: 100px;
+        height: 50px;
+        border-radius: 25px;
+        border: solid 5px;
+        color: var(--font-contours);
+        object-fit: cover;
+        object-position: 0px -20px;
+    }
 }
 
 .premier_bloc {
@@ -266,12 +278,4 @@ section {
     flex-direction: row;
     align-items: center;
     margin: 0px 0px 5px 0px;
-}
-
-a {
-    margin: 0px 25px 0px 25px;
-}
-
-.logo:hover {
-    opacity: 50%;
 }
