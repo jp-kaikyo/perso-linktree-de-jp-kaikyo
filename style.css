@@ -192,7 +192,7 @@ img {
 
 /* == hover == */
 
-img:hover {
+.logo:hover {
     width: 46px;
     height: 46px;
     opacity: 50%;
@@ -200,7 +200,7 @@ img:hover {
 }
 
 @media(max-width:768px){
-    img:hover {
+    .logo:hover {
         width: 24px;
         height: 24px;
     }
@@ -238,18 +238,12 @@ body {
     object-position: 0px -35px;
 }
 
+.photo:hover {
+    opacity: 50%;
+}
+
 @media(max-width:768px){
     .photo {
-        margin: 1% 0px 1% 0px;
-        width: 100px;
-        height: 50px;
-        border-radius: 25px;
-        border: solid 5px;
-        color: var(--font-contours);
-        object-fit: cover;
-        object-position: 0px -20px;
-    }
-    .photo:hover {
         margin: 1% 0px 1% 0px;
         width: 100px;
         height: 50px;
