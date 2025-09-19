@@ -120,7 +120,7 @@ a:active {
 .bulle_info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: var(--font-contenu);
     color:var(--font-contours);
     border: solid var(--font-contours);
@@ -177,15 +177,15 @@ a:active {
 
 
 img {
-    width: 41px;
-    height: 41px;
+    width: 48px;
+    height: 48px;
     transition: 0.5s;
 }
 
 @media(max-width:768px){
     img {
-        width: 21px;
-        height: 21px;
+        width: 24px;
+        height: 24px;
     }
 }
 
@@ -193,16 +193,16 @@ img {
 /* == hover == */
 
 .logo:hover {
-    width: 46px;
-    height: 46px;
+    width: 52px;
+    height: 52px;
     opacity: 50%;
     transition: 0.5s;
 }
 
 @media(max-width:768px){
     .logo:hover {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
     }
 }
 
