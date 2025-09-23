@@ -1,10 +1,16 @@
 /* ==== PALETTE DES COULEURS ==== */
 
 
+
+
 :root {
     --fond-principal:#0F0F0F;
     --font-contenu:#1A1A1A;
     --font-contours:#2E2E2E;
+
+    --ombre-douce: #1A1A1A; 
+    --ombre-moyenne: #1F1F1F; 
+    --ombre-forte: #242424;  
     
     --texte-titre:#ffffff;
     --texte-courant:#d1d1d1;
@@ -21,26 +27,36 @@
 /* ==== PALETTE DES TEXTES ==== */
 
 
+
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
 :root {
-    --police-titre: Georgia, "Times New Roman", serif;
-    --police-texte: "Comic Sans MS", cursive, sans-serif;
+    --police-titre: "DM Serif Text", serif;   /* pour les titres */
+    --police-texte: "Comic Neue", cursive;   /* pour les paragraphes */
+}
+
+/* Desktop */
+@media(min-width:1000px){
+    :root {
     --taille-titre-principal: 2rem;      /* h1 */
     --taille-sous-titre: 1.5rem;         /* h2 */
     --taille-texte: 1rem;                /* p */
     --taille-liens:1rem;                 /* a */
     --gras-titre: 700;
-    --gras-texte: 400;
-}
+    --gras-texte: 400;   
+}}
 
-@media(max-width:768px){
+/* Mobile */
+@media(max-width:999px){
     :root {
-    --taille-titre-principal: 1.25rem;  /* h1 */
-    --taille-sous-titre: 1rem;         /* h2 */
-    --taille-texte: 0.75rem;              /* p */
-    --taille-liens: 0.75rem;                 /* a */
+    --taille-titre-principal: 1.25rem;      /* h1 */
+    --taille-sous-titre: 1rem;              /* h2 */
+    --taille-texte: 0.75rem;                /* p */
+    --taille-liens:0.75rem;                 /* a */
+    --gras-titre: 700;
+    --gras-texte: 400;   
 }}
 
 
@@ -52,6 +68,7 @@ h1 {
     font-size: var(--taille-titre-principal);
     color: var(--texte-titre);
     margin-bottom: 0.5em;
+    transition: 0.5s;
 }
 
 h2 {
@@ -60,9 +77,12 @@ h2 {
     font-size: var(--taille-sous-titre);
     color: var(--texte-titre);
     margin-bottom: 0.5em;
+    transition: 0.5s;
 }
 
+
 /* style texte */
+
 p, span {
     font-family: var(--police-texte);
     font-weight: var(--gras-texte);
@@ -71,24 +91,35 @@ p, span {
     line-height: 1.6;
 }
 
+
 /* style lien */
+
 a {
     font-style: oblique;
     font-weight: 500;
     text-decoration: underline;
-    font-size: var(--taille-liens);
     color: var(--texte-lien);
 }
 
 
 /* == hover == */
 
+
+h1:hover {
+    text-shadow: 2.5px 2.5px 5px var(--objet-clic);
+    transition: 0.5s;
+}
+h2:hover {
+    text-shadow: 2.5px 2.5px 5px var(--objet-survol);
+    transition: 0.5s;
+}
 a:hover {
     color: var(--objet-survol);
 }
 
 
 /* == active == */
+
 
 a:active {
     color: var(--objet-clic);
@@ -97,112 +128,133 @@ a:active {
 
 
 
+
 /* ==== PALETTE DES BULLE ==== */
 
 
-.bulle_secondaire {
-    background-color: var(--font-contenu);
-    color:var(--font-contours);
-    border: solid var(--font-contours);
-    padding: 3px;
-    margin: 2% 28% 2% 28%;
-    text-align: center;
-    border-radius: 75px;
-}
 
-@media(max-width:768px){
-    .bulle_secondaire {
-        padding: 3px;
-        margin: 1% 2% 1% 2%;
+
+@media(min-width:1000px){
+   .bulle_secondaire {
+        background-color: var(--font-contenu);
+        color:var(--font-contours);
+        border: solid var(--font-contours);
+        padding: 4px;
+        margin: 2% 28% 4% 28%;
+        text-align: center;
+        border-radius: 50px;
+        box-shadow: 0px 0px 20px var(--ombre-moyenne);
+    }
+}
+@media(max-width:999px){
+   .bulle_secondaire {
+        background-color: var(--font-contenu);
+        color:var(--font-contours);
+        border: solid var(--font-contours);
+        padding: 2px;
+        margin: 1% 2% 2% 2%;
+        text-align: center;
+        border-radius: 50px;
+        box-shadow: 0px 0px 20px var(--ombre-moyenne);
     }
 }
 
-.bulle_info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: var(--font-contenu);
-    color:var(--font-contours);
-    border: solid var(--font-contours);
-    padding: 3px;
-    margin: 4% 8% 4% 8%;
-    border-radius: 100px;
-    transition: 1s;
+
+@media(min-width:1000px){
+    .bulle_info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: var(--font-contenu);
+        border: solid var(--font-contours);
+        padding: 4px;
+        margin: 4% 8% 4% 8%;
+        text-align: center;
+        border-radius: 100px;
+        box-shadow: 0px 0px 15px var(--ombre-douce);
+        transition: 1s;
+    }
+}
+@media(max-width:999px){
+    .bulle_info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: var(--font-contenu);
+        border: solid var(--font-contours);
+        padding: 2px;
+        margin: 2% 4% 2% 4%;
+        text-align: center;
+        border-radius: 100px;
+        box-shadow: 0px 0px 15px var(--ombre-douce);
+        transition: 1s;
+    }
 }
 
-@media(max-width:915px){
-    .bulle_info {
-        padding: 3px;
-        margin: 2% 4% 2% 4%;
-    }   
-}
 
 /* == hover == */
 
-.bulle_info:hover {
-    border: solid var(--objet-survol);
-    padding: 6px;
-    margin: 4% 10% 4% 10%;
-    transition: 1s;
-}
 
-@media(max-width:768px){
+@media(min-width:1000px){
     .bulle_info:hover {
-        color: var(--objet-survol);
-        margin: 2% 8% 2% 8%;
-        transition: 1s;
+        border: solid var(--objet-survol);
+        transform: scale(1.05);
+        box-shadow: 0px 0px 10px var(--objet-survol);
+        transition: 1s;      
     }
 }
 
 
 /* == active == */
 
-.bulle_info:active {
-    border: solid var(--objet-clic);
-    transition: 1s;
-}
 
-@media(max-width:768px){
+@media(min-width:1000px){
     .bulle_info:active {
-        color: var(--objet-survol);
-        margin: 2% 8% 2% 8%;
-        transition: 1s;
+        color: var(--objet-clic);
+        box-shadow: 0px 0px 20px var(--objet-clic);
+        transition: 0.5s;
+    }
+}
+@media(max-width:999px){
+    .bulle_info:active {
+        color: var(--objet-clic);
+        box-shadow: 0px 0px 20px var(--objet-clic);
+        transition: 0.5s;
     }
 }
 
 
 
 
-/* ==== PALETTE DES img ==== */
+/* ==== PALETTE DES Logo ==== */
 
 
-img {
-    width: 48px;
-    height: 48px;
-    transition: 0.5s;
+
+
+@media(min-width:1000px){
+    .logo {
+        width: 40px;
+        height: 40px;
+        transition: 1s;
+    }
 }
-
-@media(max-width:768px){
-    img {
-        width: 24px;
-        height: 24px;
+@media(max-width:999px){
+    .logo {
+        width: 30px;
+        height: 30px;
+        transition: 1s;
     }
 }
 
 
 /* == hover == */
 
-.logo:hover {
-    width: 52px;
-    height: 52px;
-    opacity: 50%;
-    transition: 0.5s;
-}
 
-@media(max-width:768px){
+@media(min-width:1000px){
     .logo:hover {
-        width: 26px;
-        height: 26px;
+        transform: scale(1.15);
+        opacity: 50%;
+        transition: 1s;
     }
 }
 
@@ -210,6 +262,8 @@ img {
 
 
 /* ==== CSS body ==== */
+
+
 
 
 body {
@@ -223,26 +277,20 @@ body {
 /* ==== VISEULLE APLIQUER ==== */
 
 
-body {
-    background-color: var(--fond-principal);
-}
 
-.photo {
-    margin: 1% 0px 1% 0px;
-    width: 200px;
-    height: 100px;
-    border-radius: 25px;
-    border: solid 5px;
-    color: var(--font-contours);
-    object-fit: cover;
-    object-position: 0px -35px;
+@media(min-width:1000px){
+  .photo {
+        margin: 1% 0px 1% 0px;
+        width: 200px;
+        height: 100px;
+        border-radius: 25px;
+        border: solid 5px;
+        color: var(--font-contours);
+        object-fit: cover;
+        object-position: 0px -35px;
+    }  
 }
-
-.photo:hover {
-    opacity: 50%;
-}
-
-@media(max-width:768px){
+@media(max-width:999px){
     .photo {
         margin: 1% 0px 1% 0px;
         width: 100px;
@@ -252,6 +300,21 @@ body {
         color: var(--font-contours);
         object-fit: cover;
         object-position: 0px -20px;
+    }
+}
+
+
+/* == hover == */
+
+
+@media(min-width:1000px){
+    .photo:hover {
+        opacity: 50%;
+    }  
+}
+@media(max-width:999px){
+    .photo:active {
+        opacity: 50%;
     }
 }
 
